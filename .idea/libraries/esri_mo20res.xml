@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="esri_mo20res">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/esri_mo20res.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
