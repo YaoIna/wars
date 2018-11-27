@@ -1,7 +1,11 @@
 package main;
 
 import com.esri.mo2.cs.geom.Envelope;
+import com.esri.mo2.data.feat.BaseFeature;
+import com.esri.mo2.data.feat.Cursor;
+import com.esri.mo2.data.feat.Data;
 import com.esri.mo2.file.shp.ShapefileFolder;
+import com.esri.mo2.file.shp.ShapefileWriter;
 import com.esri.mo2.map.dpy.*;
 import com.esri.mo2.map.dpy.Layer;
 import com.esri.mo2.map.draw.BaseSimpleRenderer;
@@ -12,7 +16,9 @@ import com.esri.mo2.ui.bean.LayerNotFoundException;
 import com.esri.mo2.ui.ren.LayerProperties;
 import com.esri.mo2.ui.tb.SelectionToolBar;
 import com.esri.mo2.ui.tb.ZoomPanToolBar;
+import data.DataRepo;
 import dialogs.*;
+import models.BattleModel;
 import models.CSVModel;
 import pointlayer.CustomFeatureLayer;
 import threads.Flash;
@@ -24,10 +30,11 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.Line2D;
 import java.io.File;
+import java.io.IOException;
 import java.text.DecimalFormat;
 
 public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterface,
-        DistanceTool.DragPointsInterface, PickIconDialog.PickIconInterface {
+        DistanceTool.DragPointsInterface, PickFileDialog.PickFileInterface, ChooseSaveDialog.ChooseSaveInterface {
 
     private final String PICK_ICON = "PICK_ICON";
 
@@ -51,6 +58,9 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
     private JMenuItem mCreateShapefileFromCSV;
 
     private JButton mPickIconButton;
+    private JButton mHotlinkButton;
+
+    private Identify mHotlinkIdentify;
 
     private JLabel mMilesLabel;
     private JLabel mKMLabel;
@@ -70,6 +80,30 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         mSelectionToolBar.setMap(mMap);
         mZoomPanToolBar.setMap(mMap);
         resizeMap();
+
+        //it will be invalid if i put codes in a method
+        mHotlinkIdentify = new Identify();
+        PickListener listener = new PickListener() {
+            @Override
+            public void beginPick(PickEvent pickEvent) {
+            }
+
+            @Override
+            public void foundData(PickEvent pickEvent) {
+                Cursor cursor = pickEvent.getCursor();
+                Data data = cursor.next();
+                if (data instanceof BaseFeature) {
+                    BaseFeature baseFeature = (BaseFeature) data;
+                    showBattleIntro(baseFeature.getDataID().getID());
+                }
+            }
+
+            @Override
+            public void endPick(PickEvent pickEvent) {
+            }
+        };
+        mHotlinkIdentify.addPickListener(listener);
+        mHotlinkIdentify.setPickWidth(20);
 
         initMenuBar();
         initJButtons();
@@ -127,6 +161,8 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                     mZoomPanToolBar.setSelectedLayer(null);
                     if (mPickIconButton != null)
                         mPickIconButton.setEnabled(false);
+                    if (mHotlinkButton != null)
+                        mHotlinkButton.setEnabled(false);
                     break;
                 case "legend_editor":
                     LayerProperties lp = new LayerProperties();
@@ -142,6 +178,7 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                     createLayerFile();
                     break;
                 case "create_shapefile_csv":
+                    chooseShapefilePath();
                     break;
                 case PICK_ICON:
                     pickImageFile();
@@ -246,6 +283,7 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                     mCreateLayerMenuItem.setEnabled(true);
                     enableLayerControlItems();
 
+
                     if (mActiveLayer instanceof BaseFeatureLayer || mActiveLayer instanceof FeatureLayer) {
                         mPickIconMenuItem.setEnabled(true);
                         mPickIconButton.setEnabled(true);
@@ -254,15 +292,22 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                         mPickIconButton.setEnabled(false);
                     }
 
-                    if (mActiveLayer instanceof CustomFeatureLayer)
+                    if (mActiveLayer instanceof CustomFeatureLayer) {
                         mCreateShapefileFromCSV.setEnabled(true);
+                        mHotlinkButton.setEnabled(true);
+                        Layer[] layers = {mActiveLayer};
+                        mHotlinkIdentify.setSelectedLayers(layers);
+
+                    } else {
+                        mCreateShapefileFromCSV.setEnabled(false);
+                        mHotlinkButton.setEnabled(false);
+                    }
                 }
             };
         mToc.setMap(mMap);
         mToc.addTocListener(mTocAdapter);
         getContentPane().add(mToc, BorderLayout.WEST);
     }
-
 
     private void enableLayerControlItems() {
         int layerCount = mMap.getLayerset().size();
@@ -303,10 +348,16 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         dialog.setVisible(true);
     }
 
+    private void chooseShapefilePath() {
+        ChooseSaveDialog chooseSaveDialog = new ChooseSaveDialog();
+        chooseSaveDialog.setInterface(this);
+        chooseSaveDialog.chooseSave();
+    }
+
     private void pickImageFile() {
-        PickIconDialog pickIconDialog = new PickIconDialog();
-        pickIconDialog.setInterface(this);
-        pickIconDialog.pickIcon();
+        PickFileDialog pickFileDialog = new PickFileDialog();
+        pickFileDialog.setInterface(this);
+        pickFileDialog.pickFile();
     }
 
     private void pickIcon(String imagePath) {
@@ -348,6 +399,7 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         final String pointer = "pointer";
         final String distance = "distance";
         final String addLayer = "add_layer";
+        final String hotlink = "hotlink";
 
         JButton printButton = new JButton(new ImageIcon(Utils.getImagePath("print.gif")));
         printButton.setActionCommand(print);
@@ -362,11 +414,16 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         mPickIconButton.setActionCommand(PICK_ICON);
         mPickIconButton.setToolTipText("Pick a icon for point layer");
         mPickIconButton.setEnabled(false);
+        mHotlinkButton = new JButton(new ImageIcon(Utils.getImagePath("hotlink.png")));
+        mHotlinkButton.setActionCommand(hotlink);
+        mHotlinkButton.setToolTipText("Click to use hotlink");
+        mHotlinkButton.setEnabled(false);
         JButton addLayerButton = new JButton(new ImageIcon(Utils.getImagePath("addtheme.gif")));
         addLayerButton.setActionCommand(addLayer);
         addLayerButton.setToolTipText("add layer");
         Arrow arrow = new Arrow();
         DistanceTool distanceTool = new DistanceTool();
+
 
         ActionListener buttonListener = e -> {
             switch (e.getActionCommand()) {
@@ -387,6 +444,9 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                 case addLayer:
                     addLayer();
                     break;
+                case hotlink:
+                    mMap.setSelectedTool(mHotlinkIdentify);
+                    break;
                 default:
                     break;
 
@@ -396,12 +456,14 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         pointerButton.addActionListener(buttonListener);
         distanceButton.addActionListener(buttonListener);
         mPickIconButton.addActionListener(buttonListener);
+        mHotlinkButton.addActionListener(buttonListener);
         addLayerButton.addActionListener(buttonListener);
 
         jToolBar.add(printButton);
         jToolBar.add(pointerButton);
         jToolBar.add(distanceButton);
         jToolBar.add(mPickIconButton);
+        jToolBar.add(mHotlinkButton);
         jToolBar.add(addLayerButton);
         mHeadJPanel.add(jToolBar);
     }
@@ -449,6 +511,20 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                 }
             }
         });
+    }
+
+    private void showBattleIntro(int index) {
+        if (index >= 0 && index < 20) {
+            BattleModel battleModel = new BattleModel();
+            battleModel.setBattleName(DataRepo.BATTLE_NAMES[index]);
+            battleModel.setBattlePicPath(Utils.getBattlePic(index + ".jpg"));
+            battleModel.setBattleIntro(DataRepo.BATTLE_INTRO[index]);
+            battleModel.setBattleLink(DataRepo.BATTLES_LINKS[index]);
+
+            BattleIntroDialog battleIntroDialog = new BattleIntroDialog(this, battleModel);
+            battleIntroDialog.setVisible(true);
+        }
+
     }
 
     private void resetDistance() {
@@ -502,8 +578,20 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
 
 
     @Override
-    public void pickIconFinished(String image) {
-        pickIcon(image);
+    public void pickFileFinished(String filePath) {
+        pickIcon(filePath);
+    }
+
+    @Override
+    public void chooseSaveFinished(String path, String name) {
+        if (mActiveLayer instanceof CustomFeatureLayer) {
+            CustomFeatureLayer layer = (CustomFeatureLayer) mActiveLayer;
+            try {
+                ShapefileWriter.writeFeatureLayer(layer, path, name, 0);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
@@ -512,3 +600,5 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
 
 
 }
+
+

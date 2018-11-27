@@ -32,4 +32,8 @@ public class Utils {
         return System.getProperty("user.dir");
     }
 
+    public static String getBattlePic(String name) {
+        return getDefaultRootPath() + "/data/pics/" + name;
+    }
+
 }
