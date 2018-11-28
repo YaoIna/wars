@@ -5,6 +5,7 @@ import com.esri.mo2.data.feat.*;
 import com.esri.mo2.map.dpy.BaseFeatureLayer;
 import com.esri.mo2.map.draw.BaseSimpleRenderer;
 import com.esri.mo2.map.draw.RasterMarkerSymbol;
+import com.esri.mo2.map.draw.SimpleMarkerSymbol;
 import com.esri.mo2.map.mem.MemoryFeatureClass;
 import models.CSVModel;
 import utils.Constants;

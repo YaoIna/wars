@@ -14,6 +14,7 @@ import com.esri.mo2.map.draw.SimpleFillSymbol;
 import com.esri.mo2.ui.bean.*;
 import com.esri.mo2.ui.bean.LayerNotFoundException;
 import com.esri.mo2.ui.ren.LayerProperties;
+import com.esri.mo2.ui.ren.Util;
 import com.esri.mo2.ui.tb.SelectionToolBar;
 import com.esri.mo2.ui.tb.ZoomPanToolBar;
 import data.DataRepo;
@@ -37,6 +38,7 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         DistanceTool.DragPointsInterface, PickFileDialog.PickFileInterface, ChooseSaveDialog.ChooseSaveInterface {
 
     private final String PICK_ICON = "PICK_ICON";
+    private final String HOTLINK_CURSOR = "HOTLINK_CURSOR";
 
     private Map mMap;
     private SelectionToolBar mSelectionToolBar;
@@ -83,6 +85,7 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
 
         //it will be invalid if i put codes in a method
         mHotlinkIdentify = new Identify();
+        setHotlinkCursor(mHotlinkIdentify);
         PickListener listener = new PickListener() {
             @Override
             public void beginPick(PickEvent pickEvent) {
@@ -381,6 +384,13 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         }
     }
 
+    private void setHotlinkCursor(Identify hotlink) {
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Image image = toolkit.getImage(Utils.getImagePath("hotlink_cursor.png"));
+        java.awt.Cursor cursor = toolkit.createCustomCursor(image, new Point(5, 5), HOTLINK_CURSOR);
+        hotlink.setCursor(cursor);
+    }
+
 
     private void resetMenuItems() {
         mDemoteMenuItem.setEnabled(false);
@@ -527,6 +537,7 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
 
     }
 
+
     private void resetDistance() {
         mMilesLabel.setText("DIST   0 mi   ");
         mKMLabel.setText("   0 km    ");
@@ -596,6 +607,10 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
 
 
     private class Arrow extends Tool {
+        @Override
+        public void mouseClicked(MouseEvent mouseEvent) {
+            super.mouseClicked(mouseEvent);
+        }
     }
 
 
