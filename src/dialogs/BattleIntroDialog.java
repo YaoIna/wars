@@ -31,7 +31,7 @@ public class BattleIntroDialog extends JDialog implements ActionListener {
         JLabel battlePicLabel = new JLabel(new ImageIcon(mBattleModel.getBattlePicPath()));
         battlePicLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        JTextArea battleIntroTextArea = getTextArea();
+        JTextArea battleIntroTextArea = Utils.getTextArea();
         battleIntroTextArea.setFont(new Font("Dialog", Font.PLAIN, 15));
         battleIntroTextArea.setText(mBattleModel.getBattleIntro());
         battleIntroTextArea.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -63,18 +63,6 @@ public class BattleIntroDialog extends JDialog implements ActionListener {
         });
 
 
-    }
-
-
-    private JTextArea getTextArea() {
-        JTextArea textArea = new JTextArea();
-        textArea.setEditable(false);
-        textArea.setCursor(null);
-        textArea.setOpaque(false);
-        textArea.setFocusable(false);
-        textArea.setLineWrap(true);
-        textArea.setWrapStyleWord(true);
-        return textArea;
     }
 
 

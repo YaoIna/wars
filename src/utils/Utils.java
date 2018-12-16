@@ -4,6 +4,8 @@ import com.esri.mo2.cs.geom.Point;
 import com.esri.mo2.ui.bean.Layer;
 import com.esri.mo2.ui.bean.Map;
 
+import javax.swing.*;
+
 public class Utils {
 
     public static void addShapeFileToMap(Map map, String path) {
@@ -34,6 +36,17 @@ public class Utils {
 
     public static String getBattlePic(String name) {
         return getDefaultRootPath() + "/data/pics/" + name;
+    }
+
+    public static JTextArea getTextArea() {
+        JTextArea textArea = new JTextArea();
+        textArea.setEditable(false);
+        textArea.setCursor(null);
+        textArea.setOpaque(false);
+        textArea.setFocusable(false);
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
+        return textArea;
     }
 
 }

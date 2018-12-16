@@ -13,6 +13,7 @@ import com.esri.mo2.map.draw.RasterMarkerSymbol;
 import com.esri.mo2.map.draw.SimpleFillSymbol;
 import com.esri.mo2.ui.bean.*;
 import com.esri.mo2.ui.bean.LayerNotFoundException;
+import com.esri.mo2.ui.dlg.AboutBox;
 import com.esri.mo2.ui.ren.LayerProperties;
 import com.esri.mo2.ui.ren.Util;
 import com.esri.mo2.ui.tb.SelectionToolBar;
@@ -23,6 +24,7 @@ import models.BattleModel;
 import models.CSVModel;
 import pointlayer.CustomFeatureLayer;
 import threads.Flash;
+import utils.Constants;
 import utils.DistanceTool;
 import utils.Utils;
 
@@ -70,6 +72,7 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
 
     private int mActiveLayoutIndex;
     private boolean mFullMap = true;
+    private boolean mHelpToolOn = false;
     private Envelope mEnvelope;
 
 
@@ -129,6 +132,7 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         JMenu fileMenu = new JMenu("File");
         JMenu themeMenu = new JMenu("Theme");
         JMenu layerControlMenu = new JMenu("LayerControl");
+        JMenu helpMenu = new JMenu("Help");
 
         mPromoteMenuItem = new JMenuItem("promote selected layer",
                 new ImageIcon(Utils.getImagePath("promote.jpg")));
@@ -146,10 +150,18 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                 new ImageIcon(Utils.getImagePath("Icon0915b.jpg")));
         JMenuItem printMenuItem = new JMenuItem("print", new ImageIcon(Utils.getImagePath("print.gif")));
         JMenuItem addLayerMenuItem = new JMenuItem("add layer", new ImageIcon("addtheme.gif"));
+        JMenu helpTopics = new JMenu("Help Topics");
+        JMenuItem tableContent = new JMenuItem("Table of Content");
+        JMenuItem legendItem = new JMenuItem("Legend Editor");
+        JMenuItem layerControlItem = new JMenuItem("Layer Control");
+        JMenuItem helpItem = new JMenuItem("Help Tool");
+        JMenuItem contactItem = new JMenuItem("Contact us");
+        JMenuItem aboutItem = new JMenuItem("About MOJO...");
         JMenuItem[] menuItemArray = {addLayerMenuItem, mRemoveLayerMenuItem, mLegendMenuItem, mAttrMenuItem,
-                mCreateLayerMenuItem, mCreateShapefileFromCSV, mPickIconMenuItem, mPromoteMenuItem, mDemoteMenuItem, printMenuItem};
+                mCreateLayerMenuItem, mCreateShapefileFromCSV, mPickIconMenuItem, mPromoteMenuItem, mDemoteMenuItem, printMenuItem, tableContent, legendItem, layerControlItem, helpItem, contactItem, aboutItem};
 
-        final String[] actionArray = {"add_layer", "remove_layer", "legend_editor", "attr_menu", "create_layer_file", "create_shapefile_csv", PICK_ICON, "promote", "demote", "print"};
+        final String[] actionArray = {"add_layer", "remove_layer", "legend_editor", "attr_menu", "create_layer_file", "create_shapefile_csv", PICK_ICON, "promote", "demote", "print", "table_content", "legend", "layer_control", "help_tool", "contact",
+                "about"};
         ActionListener menuItemListener = e -> {
             switch (e.getActionCommand()) {
                 case "add_layer":
@@ -199,6 +211,28 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                 case "print":
                     print();
                     break;
+                case "table_content":
+                    showHelpDialog(Constants.TABLE_OF_CONTENT);
+                    break;
+                case "legend":
+                    showHelpDialog(Constants.LEGEND_EDITOR);
+                    break;
+                case "layer_control":
+                    showHelpDialog(Constants.LAYER_CONTROL);
+                    break;
+                case "help_tool":
+                    showHelpDialog(Constants.HELP_TOOL);
+                    break;
+                case "contact":
+                    showHelpDialog(Constants.CONTACT);
+                    break;
+                case "about":
+                    AboutBox aboutBox = new AboutBox();
+                    aboutBox.setProductName("MOJO");
+                    aboutBox.setProductVersion("2.0");
+                    aboutBox.setVisible(true);
+                    aboutBox.setLocation(100, 100);
+                    break;
                 default:
                     break;
             }
@@ -220,9 +254,18 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         themeMenu.add(mPickIconMenuItem);
         layerControlMenu.add(mPromoteMenuItem);
         layerControlMenu.add(mDemoteMenuItem);
+        helpTopics.add(tableContent);
+        helpTopics.add(legendItem);
+        helpTopics.add(layerControlItem);
+        helpTopics.add(helpItem);
+        helpMenu.add(helpTopics);
+        helpMenu.add(contactItem);
+        helpMenu.add(aboutItem);
+
         menuBar.add(fileMenu);
         menuBar.add(themeMenu);
         menuBar.add(layerControlMenu);
+        menuBar.add(helpMenu);
     }
 
     private void createLayerFile() {
@@ -407,6 +450,7 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         JToolBar jToolBar = new JToolBar();
         final String print = "print";
         final String pointer = "pointer";
+        final String help = "help";
         final String distance = "distance";
         final String addLayer = "add_layer";
         final String hotlink = "hotlink";
@@ -417,6 +461,9 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         JButton pointerButton = new JButton(new ImageIcon(Utils.getImagePath("pointer.gif")));
         pointerButton.setActionCommand(pointer);
         pointerButton.setToolTipText("pointer");
+        JButton helpButton = new JButton(new ImageIcon(Utils.getImagePath("help.png")));
+        helpButton.setActionCommand(help);
+        helpButton.setToolTipText("help");
         JButton distanceButton = new JButton(new ImageIcon(Utils.getImagePath("measure_1.gif")));
         distanceButton.setActionCommand(distance);
         distanceButton.setToolTipText("press-drag-release to measure a distance");
@@ -434,7 +481,6 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         Arrow arrow = new Arrow();
         DistanceTool distanceTool = new DistanceTool();
 
-
         ActionListener buttonListener = e -> {
             switch (e.getActionCommand()) {
                 case print:
@@ -443,6 +489,9 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                 case pointer:
                     mMap.setSelectedTool(arrow);
                     resetDistance();
+                    break;
+                case help:
+                    mHelpToolOn = true;
                     break;
                 case distance:
                     distanceTool.setInterface(MainWarsMap.this);
@@ -464,13 +513,66 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         };
         printButton.addActionListener(buttonListener);
         pointerButton.addActionListener(buttonListener);
+        helpButton.addActionListener(buttonListener);
         distanceButton.addActionListener(buttonListener);
         mPickIconButton.addActionListener(buttonListener);
         mHotlinkButton.addActionListener(buttonListener);
         addLayerButton.addActionListener(buttonListener);
 
+        printButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+//                the help dialog appears two times for this button and i don't know why
+//                if (SwingUtilities.isRightMouseButton(e) && mHelpToolOn)
+//                    showHelpDialog(Constants.PRINT_HELP);
+            }
+        });
+        printButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if (SwingUtilities.isRightMouseButton(e) && mHelpToolOn)
+                    showHelpDialog(Constants.PRINT_HELP);
+            }
+        });
+        pointerButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if (SwingUtilities.isRightMouseButton(e) && mHelpToolOn)
+                    showHelpDialog(Constants.ARROW_HELP);
+            }
+        });
+        distanceButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if (SwingUtilities.isRightMouseButton(e) && mHelpToolOn)
+                    showHelpDialog(Constants.MEASURE_HELP);
+            }
+        });
+        mPickIconButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if (SwingUtilities.isRightMouseButton(e) && mHelpToolOn)
+                    showHelpDialog(Constants.PICK_ICON_HELP);
+            }
+        });
+        mHotlinkButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if (SwingUtilities.isRightMouseButton(e) && mHelpToolOn)
+                    showHelpDialog(Constants.HOTLINK_HELP);
+            }
+        });
+        addLayerButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if (SwingUtilities.isRightMouseButton(e) && mHelpToolOn)
+                    showHelpDialog(Constants.ADD_LAYER_HELP);
+            }
+        });
+
         jToolBar.add(printButton);
         jToolBar.add(pointerButton);
+        jToolBar.add(helpButton);
         jToolBar.add(distanceButton);
         jToolBar.add(mPickIconButton);
         jToolBar.add(mHotlinkButton);
@@ -535,6 +637,11 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
             battleIntroDialog.setVisible(true);
         }
 
+    }
+
+    private void showHelpDialog(String helpText) {
+        HelpDialog helpDialog = new HelpDialog(helpText);
+        helpDialog.setVisible(true);
     }
 
 
@@ -607,6 +714,14 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
 
 
     private class Arrow extends Tool {
+        @Override
+        public void mouseClicked(MouseEvent mouseEvent) {
+            super.mouseClicked(mouseEvent);
+            mHelpToolOn = false;
+        }
+    }
+
+    private class HelpTool extends Tool {
         @Override
         public void mouseClicked(MouseEvent mouseEvent) {
             super.mouseClicked(mouseEvent);
