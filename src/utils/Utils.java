@@ -35,7 +35,7 @@ public class Utils {
     }
 
     public static String getBattlePic(String name) {
-        return getDefaultRootPath() + "/data/pics/" + name;
+        return getDefaultRootPath() + "/pics/" + name;
     }
 
     public static JTextArea getTextArea() {
