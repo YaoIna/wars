@@ -231,8 +231,8 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                     break;
                 case "about":
                     AboutBox aboutBox = new AboutBox();
-                    aboutBox.setProductName("MOJO");
-                    aboutBox.setProductVersion("2.0");
+                    aboutBox.setProductName("Battles in WWWII");
+                    aboutBox.setProductVersion("1.0");
                     aboutBox.setVisible(true);
                     aboutBox.setLocation(100, 100);
                     break;
@@ -281,8 +281,9 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         mMenuBar.add(fileMenu);
         mMenuBar.add(themeMenu);
         mMenuBar.add(layerControlMenu);
-        mMenuBar.add(helpMenu);
         mMenuBar.add(languageMenu);
+        mMenuBar.add(helpMenu);
+
     }
 
     private void createLayerFile() {
@@ -480,7 +481,7 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         pointerButton.setToolTipText("pointer");
         JButton helpButton = new JButton(new ImageIcon(Utils.getImagePath("help.png")));
         helpButton.setActionCommand(help);
-        helpButton.setToolTipText("help");
+        helpButton.setToolTipText("left click here and then right click on other tool buttons will show tips of these button");
         JButton distanceButton = new JButton(new ImageIcon(Utils.getImagePath("measure_1.gif")));
         distanceButton.setActionCommand(distance);
         distanceButton.setToolTipText("press-drag-release to measure a distance");
@@ -504,6 +505,7 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                     print();
                     break;
                 case pointer:
+                    mHelpToolOn = false;
                     mMap.setSelectedTool(arrow);
                     resetDistance();
                     break;
@@ -787,9 +789,10 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
     private class Arrow extends Tool {
         @Override
         public void mouseClicked(MouseEvent mouseEvent) {
-            super.mouseClicked(mouseEvent);
             mHelpToolOn = false;
+            super.mouseClicked(mouseEvent);
         }
+
     }
 
     private class HelpTool extends Tool {

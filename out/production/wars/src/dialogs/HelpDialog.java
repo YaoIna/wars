@@ -17,7 +17,7 @@ public class HelpDialog extends JDialog {
         helpArea.setFont(new Font("Dialog", Font.PLAIN, 15));
         helpArea.setText(helpText);
         helpArea.setAlignmentX(Component.CENTER_ALIGNMENT);
-        getContentPane().add(helpArea, BorderLayout.CENTER);
+        getContentPane().add(new JScrollPane(helpArea), BorderLayout.CENTER);
 
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {

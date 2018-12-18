@@ -8,24 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2bd70954-8e40-4591-a8b7-6f818ba9f7fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$9.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$Arrow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$Arrow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$HelpTool.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap$HelpTool.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wars/main/MainWarsMap.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/wars/utils/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/wars/utils/Constants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/MainWarsMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainWarsMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wars.iml" beforeDir="false" afterPath="$PROJECT_DIR$/wars.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,17 +19,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/swing/JMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="104" column="13" selection-start-line="104" selection-start-column="13" selection-end-line="104" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/Constants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="51" column="81" selection-start-line="51" selection-start-column="81" selection-end-line="51" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/MainWarsMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="81" column="38" selection-start-line="81" selection-start-column="38" selection-end-line="81" selection-end-column="38" />
+            <state relative-caret-position="487">
+              <caret line="234" column="49" selection-start-line="234" selection-start-column="49" selection-end-line="234" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#26985#26986#0" expanded="true" />
-                <element signature="e#27029#27030#0" expanded="true" />
-                <element signature="e#28576#28577#0" expanded="true" />
-                <element signature="e#28610#28611#0" expanded="true" />
+                <element signature="e#30283#30284#0" expanded="true" />
+                <element signature="e#30327#30328#0" expanded="true" />
+                <element signature="e#31875#31876#0" expanded="true" />
+                <element signature="e#31909#31910#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,48 +57,29 @@
         <entry file="file://$PROJECT_DIR$/src/NamesBundle_en_US.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret selection-end-line="22" selection-end-column="15" />
+              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="23" />
             </state>
           </provider>
+          <provider editor-type-id="ResourceBundle" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NamesBundle_zh_CN.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+            </state>
+          </provider>
           <provider editor-type-id="ResourceBundle" />
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/swing/JMenu.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="104" column="13" selection-start-line="104" selection-start-column="13" selection-end-line="104" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="44" column="197" selection-start-line="44" selection-start-column="197" selection-end-line="44" selection-end-column="197" />
-            </state>
-          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dialogs/ReadMeDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
+            <state>
               <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1878#2005#0" expanded="true" />
-                <element signature="e#2004#2005#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -106,7 +88,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dialogs/HelpDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
+            <state>
               <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -118,7 +100,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pointlayer/CustomFeatureLayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
+            <state>
               <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -130,12 +112,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dialogs/BattleIntroDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
+            <state>
               <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2175#2302#0" expanded="true" />
-                <element signature="e#2301#2302#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,13 +124,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
+            <state>
               <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
               <folding>
                 <element signature="e#1098#1099#0" expanded="true" />
                 <element signature="e#1164#1165#0" expanded="true" />
                 <element signature="e#1320#1321#0" expanded="true" />
-                <element signature="e#1386#1387#0" expanded="true" />
+                <element signature="e#1381#1382#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -218,19 +198,17 @@
         <option value="$PROJECT_DIR$/src/dialogs/BattleIntroDialog.java" />
         <option value="$PROJECT_DIR$/src/dialogs/HelpDialog.java" />
         <option value="$PROJECT_DIR$/src/utils/Utils.java" />
-        <option value="$PROJECT_DIR$/src/utils/Constants.java" />
         <option value="$PROJECT_DIR$/src/dialogs/ReadMeDialog.java" />
         <option value="$PROJECT_DIR$/src/NamesBundle_en_US.properties" />
         <option value="$PROJECT_DIR$/src/NamesBundle_zh_CN.properties" />
+        <option value="$PROJECT_DIR$/src/utils/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/MainWarsMap.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="1440" />
-    <option name="y" value="-387" />
-    <option name="width" value="2560" />
-    <option name="height" value="1440" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -240,7 +218,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -253,21 +230,16 @@
               <item name="wars" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="wars" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wars" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Resource Bundle 'NamesBundle'" type="a6c14932:ResourceBundleNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544947752610" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544950262664" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -339,10 +311,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1440" y="-387" width="2560" height="1440" extended-state="0" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1183479" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.119456366" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -351,7 +323,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3270073" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.1839416" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.1839416" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.23576643" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -387,33 +359,15 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/MainWarsMap.java</url>
-          <line>533</line>
+          <line>543</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/MainWarsMap.java</url>
-          <line>239</line>
-          <properties />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/MainWarsMap.java</url>
-          <line>238</line>
-          <properties />
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/MainWarsMap.java</url>
-          <line>167</line>
+          <line>168</line>
           <properties />
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/MainWarsMap.java</url>
-          <line>669</line>
-          <properties />
-          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -663,9 +617,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/swing/JMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="104" column="13" selection-start-line="104" selection-start-column="13" selection-end-line="104" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="51" column="81" selection-start-line="51" selection-start-column="81" selection-end-line="51" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NamesBundle_en_US.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="23" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NamesBundle_zh_CN.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dialogs/ReadMeDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dialogs/HelpDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pointlayer/CustomFeatureLayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
+        <state>
           <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -675,20 +679,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dialogs/BattleIntroDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
+        <state>
           <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2175#2302#0" expanded="true" />
-            <element signature="e#2301#2302#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dialogs/HelpDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -697,68 +689,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
+        <state>
           <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
           <folding>
             <element signature="e#1098#1099#0" expanded="true" />
             <element signature="e#1164#1165#0" expanded="true" />
             <element signature="e#1320#1321#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
+            <element signature="e#1381#1382#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="44" column="197" selection-start-line="44" selection-start-column="197" selection-end-line="44" selection-end-column="197" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/swing/JMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="104" column="13" selection-start-line="104" selection-start-column="13" selection-end-line="104" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dialogs/ReadMeDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1878#2005#0" expanded="true" />
-            <element signature="e#2004#2005#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NamesBundle_en_US.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="22" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NamesBundle_zh_CN.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/MainWarsMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="81" column="38" selection-start-line="81" selection-start-column="38" selection-end-line="81" selection-end-column="38" />
+        <state relative-caret-position="487">
+          <caret line="234" column="49" selection-start-line="234" selection-start-column="49" selection-end-line="234" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#26985#26986#0" expanded="true" />
-            <element signature="e#27029#27030#0" expanded="true" />
-            <element signature="e#28576#28577#0" expanded="true" />
-            <element signature="e#28610#28611#0" expanded="true" />
+            <element signature="e#30283#30284#0" expanded="true" />
+            <element signature="e#30327#30328#0" expanded="true" />
+            <element signature="e#31875#31876#0" expanded="true" />
+            <element signature="e#31909#31910#0" expanded="true" />
           </folding>
         </state>
       </provider>
