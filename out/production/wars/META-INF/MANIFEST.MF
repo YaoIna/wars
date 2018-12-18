@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: esri_mo20.jar esri_mo20res.jar esri_mo20img.jar
+Main-Class: Main
+

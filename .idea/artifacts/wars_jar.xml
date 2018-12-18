@@ -6,8 +6,8 @@
         <element id="module-output" name="wars" />
       </element>
       <element id="library" level="project" name="esri_mo20" />
-      <element id="library" level="project" name="esri_mo20img" />
       <element id="library" level="project" name="esri_mo20res" />
+      <element id="library" level="project" name="esri_mo20img" />
     </root>
   </artifact>
 </component>

@@ -13,6 +13,7 @@ import com.esri.mo2.map.draw.RasterMarkerSymbol;
 import com.esri.mo2.map.draw.SimpleFillSymbol;
 import com.esri.mo2.ui.bean.*;
 import com.esri.mo2.ui.bean.LayerNotFoundException;
+import com.esri.mo2.ui.bean.Map;
 import com.esri.mo2.ui.dlg.AboutBox;
 import com.esri.mo2.ui.ren.LayerProperties;
 import com.esri.mo2.ui.tb.SelectionToolBar;
@@ -28,17 +29,17 @@ import utils.DistanceTool;
 import utils.Utils;
 
 import javax.swing.*;
+import javax.swing.text.html.HTMLDocument;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.Line2D;
 import java.io.File;
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.Locale;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterface,
-        DistanceTool.DragPointsInterface, PickFileDialog.PickFileInterface, ChooseSaveDialog.ChooseSaveInterface {
+        DistanceTool.DragPointsInterface, PickFileDialog.PickFileInterface, ChooseSaveDialog.ChooseSaveInterface, AttrTabDialog.AttrDismissInterface {
 
     private final String PICK_ICON = "PICK_ICON";
     private final String HOTLINK_CURSOR = "HOTLINK_CURSOR";
@@ -74,6 +75,7 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
     private int mActiveLayoutIndex;
     private boolean mFullMap = true;
     private boolean mHelpToolOn = false;
+    private HashMap<String, AttrTabDialog> mAttrMap;
     private Envelope mEnvelope;
 
 
@@ -86,6 +88,8 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         mSelectionToolBar.setMap(mMap);
         mZoomPanToolBar.setMap(mMap);
         resizeMap();
+
+        mAttrMap = new HashMap<>();
 
         //it will be invalid if i put codes in a method
         mHotlinkIdentify = new Identify();
@@ -109,6 +113,22 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
             public void endPick(PickEvent pickEvent) {
             }
         };
+
+        mMap.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                java.util.Timer timer = new java.util.Timer();
+                timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        if (mAttrMap.containsKey(mActiveLayer.getName()))
+                            mAttrMap.get(mActiveLayer.getName()).updateTableFromMapSelection();
+
+                    }
+                }, 100);
+            }
+        });
+
         mHotlinkIdentify.addPickListener(listener);
         mHotlinkIdentify.setPickWidth(20);
 
@@ -124,6 +144,7 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         initToc();
 
         addBattlesLayer();
+        eraserSelection();
     }
 
 
@@ -189,8 +210,17 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                     lp.setVisible(true);
                     break;
                 case "attr_menu":
-                    AttrTabDialog attrTab = new AttrTabDialog(mCurrentLegend.getLayer());
-                    attrTab.setVisible(true);
+                    String layerName = mActiveLayer.getName();
+                    if (mAttrMap.containsKey(layerName)) {
+                        AttrTabDialog dialog = mAttrMap.get(layerName);
+                        dialog.updateTableFromMapSelection();
+                        dialog.setVisible(true);
+                    } else {
+                        AttrTabDialog attrTab = new AttrTabDialog(mActiveLayer);
+                        attrTab.setInterface(this);
+                        attrTab.setVisible(true);
+                        mAttrMap.put(mActiveLayer.getName(), attrTab);
+                    }
                     break;
                 case "create_layer_file":
                     createLayerFile();
@@ -626,6 +656,15 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         getContentPane().add(footJPanel, BorderLayout.SOUTH);
     }
 
+    private void eraserSelection() {
+        JButton eraser = (JButton) mSelectionToolBar.getActionComponent("ClearSelection");
+        eraser.addActionListener(e -> {
+            for (java.util.Map.Entry<String, AttrTabDialog> stringAttrTabDialogEntry : mAttrMap.entrySet()) {
+                stringAttrTabDialogEntry.getValue().clear();
+            }
+        });
+    }
+
     private void resizeMap() {
         ActionListener zoomListener = ae -> mFullMap = false; // can change a boolean here
         ((JButton) mZoomPanToolBar.getActionComponent("ZoomIn")).addActionListener(zoomListener);
@@ -783,6 +822,11 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                 e.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public void onAttrDismissed(String name) {
+        mAttrMap.remove(name);
     }
 
 

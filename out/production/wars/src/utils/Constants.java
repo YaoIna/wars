@@ -43,7 +43,7 @@ public class Constants {
     public static String READ_ME = "This application is to show 20 famous battles in World Wide War II based on MOJO 2.0. Users can use hotlink tool to click on a icon of the battles to see" +
             "more information about this battle(including text, pic and web link). One can also select any areas of the map and save them as a map file. If you don't like the battle icons, you can" +
             "pick a icon using pick icon tool. Other functions are also provided. For example, add layer, measure distance, print map, legend editor and so on. Here is a picture of a pet with me.";
-    public static String[] NAME_BUNDLE_KEYS_MENU = {"file", "theme", "layer_control", "help", "language"};
+    public static String[] NAME_BUNDLE_KEYS_MENU = {"file", "theme", "layer_control", "language", "help"};
     public static String[] NAME_BUNDLE_KEYS_FILE = {"add", "print", "remove", "legend"};
     public static String[] NAME_BUNDLE_KEYS_THEME = {"attribute_table", "create_selection", "create_csv", "pick_icons"};
     public static String[] NAME_BUNDLE_KEYS_LAYER = {"promote", "demote"};

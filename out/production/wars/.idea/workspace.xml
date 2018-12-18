@@ -8,6 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2bd70954-8e40-4591-a8b7-6f818ba9f7fb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dialogs/AttrTabDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dialogs/AttrTabDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/MainWarsMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MainWarsMap.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,79 +21,111 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.desktop/javax/swing/JMenu.java">
+        <entry file="file://$PROJECT_DIR$/src/dialogs/AttrTabDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="104" column="13" selection-start-line="104" selection-start-column="13" selection-end-line="104" selection-end-column="13" />
+            <state relative-caret-position="556">
+              <caret line="69" column="40" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#828#980#0" expanded="true" />
+                <element signature="e#979#980#0" expanded="true" />
+                <element signature="e#3281#3282#0" expanded="true" />
+                <element signature="e#3133#3134#0" expanded="true" />
+                <element signature="e#3184#3185#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/utils/Constants.java">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Iterator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="51" column="81" selection-start-line="51" selection-start-column="81" selection-end-line="51" selection-end-column="81" />
+            <state relative-caret-position="153">
+              <caret line="73" column="6" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/dialogs/AddLayerDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-373">
+              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/esri_mo20.jar!/com/esri/mo2/data/feat/SelectionSet.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/MainWarsMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="33">
+              <caret line="116" column="30" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3848#4368#0" expanded="true" />
+                <element signature="e#4039#4337#0" expanded="true" />
+                <element signature="e#4336#4337#0" expanded="true" />
+                <element signature="e#4367#4368#0" expanded="true" />
+                <element signature="e#15138#16924#0" expanded="true" />
+                <element signature="e#16923#16924#0" expanded="true" />
+                <element signature="e#23846#24189#0" expanded="true" />
+                <element signature="e#24188#24189#0" expanded="true" />
+                <element signature="e#24229#24479#0" expanded="true" />
+                <element signature="e#24478#24479#0" expanded="true" />
+                <element signature="e#24521#24771#0" expanded="true" />
+                <element signature="e#24770#24771#0" expanded="true" />
+                <element signature="e#24814#25066#0" expanded="true" />
+                <element signature="e#25065#25066#0" expanded="true" />
+                <element signature="e#25110#25364#0" expanded="true" />
+                <element signature="e#25363#25364#0" expanded="true" />
+                <element signature="e#25407#25659#0" expanded="true" />
+                <element signature="e#25658#25659#0" expanded="true" />
+                <element signature="e#25702#25956#0" expanded="true" />
+                <element signature="e#25955#25956#0" expanded="true" />
+                <element signature="e#26608#27185#0" expanded="true" />
+                <element signature="e#27184#27185#0" expanded="true" />
+                <element signature="e#28215#28514#0" expanded="true" />
+                <element signature="e#28513#28514#0" expanded="true" />
+                <element signature="e#32058#32059#0" expanded="true" />
+                <element signature="e#33097#33482#0" expanded="true" />
+                <element signature="e#33481#33482#0" expanded="true" />
+                <element signature="e#33640#33641#0" expanded="true" />
+                <element signature="e#34145#34146#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/lib/esri_mo20.jar!/com/esri/mo2/ui/bean/Map.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="1022" column="16" selection-start-line="1022" selection-start-column="16" selection-end-line="1022" selection-end-column="16" />
+              <folding>
+                <element signature="e#30509#30510#0" expanded="true" />
+                <element signature="e#30538#30539#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/MainWarsMap.java">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.desktop/java/awt/Component.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="234" column="49" selection-start-line="234" selection-start-column="49" selection-end-line="234" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#30283#30284#0" expanded="true" />
-                <element signature="e#30327#30328#0" expanded="true" />
-                <element signature="e#31875#31876#0" expanded="true" />
-                <element signature="e#31909#31910#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/NamesBundle_en_US.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="23" />
-            </state>
-          </provider>
-          <provider editor-type-id="ResourceBundle" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/NamesBundle_zh_CN.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="18" column="10" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-            </state>
-          </provider>
-          <provider editor-type-id="ResourceBundle" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dialogs/ReadMeDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/dialogs/HelpDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="178">
+              <caret line="7219" column="16" selection-start-line="7219" selection-start-column="16" selection-end-line="7219" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -100,7 +133,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pointlayer/CustomFeatureLayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="270">
               <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -112,7 +145,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/dialogs/BattleIntroDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="165">
               <caret line="22" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -124,7 +157,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/Utils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="420">
               <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
               <folding>
                 <element signature="e#1098#1099#0" expanded="true" />
@@ -156,7 +189,6 @@
       <find>createLayerMenuItem</find>
       <find>mTocAdapter</find>
       <find>mPickIconButton</find>
-      <find>mHotlinkIdentify</find>
       <find>mHotlinkButton</find>
       <find>hotlink.</find>
       <find>Cursor</find>
@@ -165,6 +197,18 @@
       <find>ActionListener</find>
       <find>Arrow</find>
       <find>arrow</find>
+      <find>about</find>
+      <find>Mouse</find>
+      <find>hotlink</find>
+      <find>mHotlinkIdentify</find>
+      <find>ope</find>
+      <find>open</find>
+      <find>mAttrList</find>
+      <find>mAttrMap</find>
+      <find>mFullMap</find>
+      <find>erase</find>
+      <find>AttrTableSelectionListener</find>
+      <find>mMap</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -185,7 +229,6 @@
         <option value="$PROJECT_DIR$/src/QuickStart.java" />
         <option value="$PROJECT_DIR$/src/models/CSVModel.java" />
         <option value="$PROJECT_DIR$/src/dialogs/AddXYThemeDialog.java" />
-        <option value="$PROJECT_DIR$/src/dialogs/AttrTabDialog.java" />
         <option value="$PROJECT_DIR$/src/dialogs/CreateShapeDialog.java" />
         <option value="$PROJECT_DIR$/src/dialogs/PickPathDialog.java" />
         <option value="$PROJECT_DIR$/src/dialogs/PickIconDialog.java" />
@@ -196,12 +239,13 @@
         <option value="$PROJECT_DIR$/src/pointlayer/CustomFeatureLayer.java" />
         <option value="$PROJECT_DIR$/src/dialogs/ChooseSaveDialog.java" />
         <option value="$PROJECT_DIR$/src/dialogs/BattleIntroDialog.java" />
-        <option value="$PROJECT_DIR$/src/dialogs/HelpDialog.java" />
         <option value="$PROJECT_DIR$/src/utils/Utils.java" />
         <option value="$PROJECT_DIR$/src/dialogs/ReadMeDialog.java" />
         <option value="$PROJECT_DIR$/src/NamesBundle_en_US.properties" />
         <option value="$PROJECT_DIR$/src/NamesBundle_zh_CN.properties" />
         <option value="$PROJECT_DIR$/src/utils/Constants.java" />
+        <option value="$PROJECT_DIR$/src/dialogs/HelpDialog.java" />
+        <option value="$PROJECT_DIR$/src/dialogs/AttrTabDialog.java" />
         <option value="$PROJECT_DIR$/src/main/MainWarsMap.java" />
       </list>
     </option>
@@ -239,8 +283,8 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544950262664" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545171903390" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -312,9 +356,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.119456366" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19456366" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -322,16 +365,16 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3270073" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.1839416" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.23576643" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.036144577" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.41686746" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.23493975" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.329927" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.329927" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3270073" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32891566" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32650602" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -346,44 +389,70 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/dialogs/AttrTabDialog.java</url>
-          <line>28</line>
-          <properties />
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/dialogs/AttrTabDialog.java</url>
-          <line>30</line>
-          <properties />
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/MainWarsMap.java</url>
-          <line>543</line>
+          <line>575</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/MainWarsMap.java</url>
-          <line>168</line>
+          <line>616</line>
           <properties />
-          <option name="timeStamp" value="19" />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/MainWarsMap.java</url>
+          <line>617</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/MainWarsMap.java</url>
+          <line>835</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/MainWarsMap.java</url>
+          <line>119</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/MainWarsMap.java</url>
+          <line>213</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/MainWarsMap.java</url>
+          <line>218</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dialogs/AttrTabDialog.java</url>
+          <line>62</line>
+          <properties />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dialogs/AttrTabDialog.java</url>
+          <line>64</line>
+          <properties />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/dialogs/AttrTabDialog.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="39" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/DrawLinesOnMap.java" />
-    <entry file="file://$PROJECT_DIR$/src/dialogs/AddLayerDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/threads/Flash.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -402,16 +471,6 @@
     <entry file="file://$PROJECT_DIR$/src/pointlayer/XYFeatureLayer.java" />
     <entry file="file://$PROJECT_DIR$/src/dialogs/AddPointDialog.java" />
     <entry file="file://$PROJECT_DIR$/src/dialogs/AddXYThemeDialog.java" />
-    <entry file="file://$PROJECT_DIR$/src/dialogs/AttrTabDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/CSVModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -479,13 +538,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/esri_mo20.jar!/com/esri/mo2/ui/bean/Identify.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/esri_mo20.jar!/com/esri/mo2/data/feat/BaseRow.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4986">
@@ -540,13 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2502">
           <caret line="139" column="4" selection-start-line="139" selection-start-column="4" selection-end-line="139" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.desktop/java/awt/Component.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52506">
-          <caret line="3165" column="30" selection-start-line="3165" selection-start-column="30" selection-end-line="3165" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -647,9 +692,30 @@
       </provider>
       <provider editor-type-id="ResourceBundle" />
     </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/esri_mo20.jar!/com/esri/mo2/ui/bean/Identify.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/esri_mo20.jar!/com/esri/mo2/ui/bean/BasePick.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.desktop/java/awt/event/MouseAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="69" column="22" selection-start-line="69" selection-start-column="22" selection-end-line="69" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/dialogs/ReadMeDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="315">
           <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -659,8 +725,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dialogs/HelpDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="210">
+          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -669,7 +735,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pointlayer/CustomFeatureLayer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="270">
           <caret line="30" column="54" selection-start-line="30" selection-start-column="54" selection-end-line="30" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -679,7 +745,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/dialogs/BattleIntroDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="165">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -689,7 +755,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="420">
           <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
           <folding>
             <element signature="e#1098#1099#0" expanded="true" />
@@ -700,17 +766,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/MainWarsMap.java">
+    <entry file="jar://$PROJECT_DIR$/lib/esri_mo20.jar!/com/esri/mo2/ui/bean/Map.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
-          <caret line="234" column="49" selection-start-line="234" selection-start-column="49" selection-end-line="234" selection-end-column="49" />
+        <state relative-caret-position="178">
+          <caret line="1022" column="16" selection-start-line="1022" selection-start-column="16" selection-end-line="1022" selection-end-column="16" />
+          <folding>
+            <element signature="e#30509#30510#0" expanded="true" />
+            <element signature="e#30538#30539#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/esri_mo20.jar!/com/esri/mo2/data/feat/SelectionSet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/Iterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="73" column="6" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dialogs/AddLayerDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-373">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#30283#30284#0" expanded="true" />
-            <element signature="e#30327#30328#0" expanded="true" />
-            <element signature="e#31875#31876#0" expanded="true" />
-            <element signature="e#31909#31910#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dialogs/AttrTabDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="69" column="40" selection-start-line="69" selection-start-column="40" selection-end-line="69" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#828#980#0" expanded="true" />
+            <element signature="e#979#980#0" expanded="true" />
+            <element signature="e#3281#3282#0" expanded="true" />
+            <element signature="e#3133#3134#0" expanded="true" />
+            <element signature="e#3184#3185#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/MainWarsMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="116" column="30" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3848#4368#0" expanded="true" />
+            <element signature="e#4039#4337#0" expanded="true" />
+            <element signature="e#4336#4337#0" expanded="true" />
+            <element signature="e#4367#4368#0" expanded="true" />
+            <element signature="e#15138#16924#0" expanded="true" />
+            <element signature="e#16923#16924#0" expanded="true" />
+            <element signature="e#23846#24189#0" expanded="true" />
+            <element signature="e#24188#24189#0" expanded="true" />
+            <element signature="e#24229#24479#0" expanded="true" />
+            <element signature="e#24478#24479#0" expanded="true" />
+            <element signature="e#24521#24771#0" expanded="true" />
+            <element signature="e#24770#24771#0" expanded="true" />
+            <element signature="e#24814#25066#0" expanded="true" />
+            <element signature="e#25065#25066#0" expanded="true" />
+            <element signature="e#25110#25364#0" expanded="true" />
+            <element signature="e#25363#25364#0" expanded="true" />
+            <element signature="e#25407#25659#0" expanded="true" />
+            <element signature="e#25658#25659#0" expanded="true" />
+            <element signature="e#25702#25956#0" expanded="true" />
+            <element signature="e#25955#25956#0" expanded="true" />
+            <element signature="e#26608#27185#0" expanded="true" />
+            <element signature="e#27184#27185#0" expanded="true" />
+            <element signature="e#28215#28514#0" expanded="true" />
+            <element signature="e#28513#28514#0" expanded="true" />
+            <element signature="e#32058#32059#0" expanded="true" />
+            <element signature="e#33097#33482#0" expanded="true" />
+            <element signature="e#33481#33482#0" expanded="true" />
+            <element signature="e#33640#33641#0" expanded="true" />
+            <element signature="e#34145#34146#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.desktop/java/awt/Component.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="7219" column="16" selection-start-line="7219" selection-start-column="16" selection-end-line="7219" selection-end-column="16" />
         </state>
       </provider>
     </entry>
