@@ -39,7 +39,7 @@ import java.text.DecimalFormat;
 import java.util.*;
 
 public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterface,
-        DistanceTool.DragPointsInterface, PickFileDialog.PickFileInterface, ChooseSaveDialog.ChooseSaveInterface, AttrTabDialog.AttrDismissInterface {
+        DistanceTool.DragPointsInterface, PickFileDialog.PickFileInterface, ChooseSaveDialog.ChooseSaveInterface, AttrTabDialog.AttrDismissInterface, AddXYThemeDialog.AddXYThemeInterface {
 
     private final String PICK_ICON = "PICK_ICON";
     private final String HOTLINK_CURSOR = "HOTLINK_CURSOR";
@@ -114,6 +114,9 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
             }
         };
 
+        mHotlinkIdentify.addPickListener(listener);
+        mHotlinkIdentify.setPickWidth(20);
+
         mMap.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseReleased(MouseEvent e) {
@@ -121,6 +124,8 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                 timer.schedule(new TimerTask() {
                     @Override
                     public void run() {
+                        if (mAttrMap == null || mActiveLayer == null)
+                            return;
                         if (mAttrMap.containsKey(mActiveLayer.getName()))
                             mAttrMap.get(mActiveLayer.getName()).updateTableFromMapSelection();
 
@@ -129,8 +134,6 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
             }
         });
 
-        mHotlinkIdentify.addPickListener(listener);
-        mHotlinkIdentify.setPickWidth(20);
 
         initMenuBar();
         initJButtons();
@@ -168,6 +171,7 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                 new ImageIcon(Utils.getImagePath("Icon0915b.jpg")));
         mCreateShapefileFromCSV = new JMenuItem("create shapefile from CSV",
                 new ImageIcon(Utils.getImagePath("Icon0915b.jpg")));
+        JMenuItem addPointLayerItem = new JMenuItem("Add point layer from csv");
         JMenuItem printMenuItem = new JMenuItem("print", new ImageIcon(Utils.getImagePath("print.gif")));
         JMenuItem addLayerMenuItem = new JMenuItem("add layer", new ImageIcon("addtheme.gif"));
         JMenu helpTopics = new JMenu("Help Topics");
@@ -182,9 +186,9 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         JMenuItem cnItem = new JMenuItem("Chinese");
 
         JMenuItem[] menuItemArray = {addLayerMenuItem, mRemoveLayerMenuItem, mLegendMenuItem, mAttrMenuItem,
-                mCreateLayerMenuItem, mCreateShapefileFromCSV, mPickIconMenuItem, mPromoteMenuItem, mDemoteMenuItem, printMenuItem, tableContent, legendItem, layerControlItem, helpItem, contactItem, aboutItem, readItem, enItem, cnItem};
+                mCreateLayerMenuItem, mCreateShapefileFromCSV, mPickIconMenuItem, mPromoteMenuItem, mDemoteMenuItem, addPointLayerItem, printMenuItem, tableContent, legendItem, layerControlItem, helpItem, contactItem, aboutItem, readItem, enItem, cnItem};
 
-        final String[] actionArray = {"add_layer", "remove_layer", "legend_editor", "attr_menu", "create_layer_file", "create_shapefile_csv", PICK_ICON, "promote", "demote", "print", "table_content", "legend", "layer_control", "help_tool", "contact",
+        final String[] actionArray = {"add_layer", "remove_layer", "legend_editor", "attr_menu", "create_layer_file", "create_shapefile_csv", PICK_ICON, "promote", "demote", "add point layer from csv", "print", "table_content", "legend", "layer_control", "help_tool", "contact",
                 "about", "read_me", "english", "chinese"};
         ActionListener menuItemListener = e -> {
             switch (e.getActionCommand()) {
@@ -241,6 +245,13 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
                     enableLayerControlItems();
                     mMap.redraw();
                     break;
+                case "add point layer from csv":
+                    AddXYThemeDialog addXYThemeDialog = new AddXYThemeDialog();
+                    addXYThemeDialog.setInterface(this);
+                    addXYThemeDialog.addLayer("Point Layer");
+                    addXYThemeDialog.setVisible(false);
+                    mMap.redraw();
+                    break;
                 case "print":
                     print();
                     break;
@@ -291,6 +302,7 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
         fileMenu.add(printMenuItem);
         fileMenu.add(mRemoveLayerMenuItem);
         fileMenu.add(mLegendMenuItem);
+        fileMenu.add(addPointLayerItem);
         themeMenu.add(mAttrMenuItem);
         themeMenu.add(mCreateLayerMenuItem);
         themeMenu.add(mCreateShapefileFromCSV);
@@ -827,6 +839,13 @@ public class MainWarsMap extends JFrame implements AddLayerDialog.AddLayerInterf
     @Override
     public void onAttrDismissed(String name) {
         mAttrMap.remove(name);
+    }
+
+    @Override
+    public void addXYThemeFinished(CustomFeatureLayer layer) {
+        layer.setVisible(true);
+        mMap.getLayerset().addLayer(layer);
+        mMap.redraw();
     }
 
 
